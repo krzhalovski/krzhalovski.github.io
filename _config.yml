@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Danail Krzhalovski"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/bio-image.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Portfolio"
   location         : "Skopje, Macedonia"
   email            :
