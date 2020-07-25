@@ -1,12 +1,16 @@
 ---
-title: "Predicting Political Orientation From Twitter Data"
+title: "Predicting Song Popularity"
 date: 2020-07-18
-tags: ["NLP"]
-excerpt: "Natural Language Processing and Classification"
+tags: ["EDA"]
+excerpt: "Data Analysis"
 mathjax: true
 ---
 
 Testing 
+
+Cool equation:
+
+$$ \mathbb{E}\[aX\] = a*\mathbb{E}\[X\] $$
 
 ```python
     import numpy as np

@@ -2,7 +2,7 @@
 title: "Data Augmentation Automation"
 date: 2020-07-19
 tags: ["Data Augmentation"]
-excerpt: "Data Augmentation"
+excerpt: "Augmentation Automation"
 mathjax: true
 ---
 
