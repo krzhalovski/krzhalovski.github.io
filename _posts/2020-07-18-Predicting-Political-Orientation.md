@@ -25,9 +25,9 @@ The project consists of two main phases:
 Before delving into the huge dataset that was generated from all of the groups, we decided to do some initial statistics analysis on the dataset that our group gathered. As shown in the code snippets bellow we gained insights on user twitter activity, user vocabulary and time period usage analysis.
 
 <figure class="half">
-    <a href="/images/Twitter_Politics/daily_tweets.jpg"><img src="/assets/images/image-filename-1.jpg"></a>
-    <a href="/images/Twitter_Politics/daily_tweets_ranges.jpg"><img src="/assets/images/image-filename-2.jpg"></a>
-    <figcaption>Tweet distribution</figcaption>
+    <a href="/images/Twitter_Politics/daily_tweets.jpg"><img src="/images/Twitter_Politics/daily_tweets.jpg"></a>
+    <a href="/images/Twitter_Politics/daily_tweets_range.jpg"><img src="/images/Twitter_Politics/daily_tweets_range.jpg"></a>
+    <figcaption>Number of tweets per day</figcaption>
 </figure>
 
 ## Data Collection and Preparation
