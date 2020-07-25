@@ -7,9 +7,12 @@ mathjax: true
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
+toc_sticky: true
 ---
 
 ## Introduction
+This summary report aims to find a connection between user's twitter activity and their political affiliation. For the full report and code, please visit this [link](https://github.com/krzhalovski/CBSD).
+
 ### Abstract
 In recent years, analyzing data acquired from social networks platform to predict and understand more about human cognition, behaviors and orientation has been a rising trend. Social media has changed not only the way we passively receive information but also how we express our personal opinions about everyday issues. That is the reason why Facebook, Twitter, Youtube and other social networks have become valuable sources of data that can be beneficial for many areas. Automatic political orientation prediction from social media posts has been proven successful in distinguishing between liberals and conservatives in the US. In this project, we will try to do political orientation prediction on Italian language and Italian political landscape.
 
@@ -20,6 +23,8 @@ The project consists of two main phases:
 
 ### Initial Statistics
 Before delving into the huge dataset that was generated from all of the groups, we decided to do some initial statistics analysis on the dataset that our group gathered. As shown in the code snippets bellow we gained insights on user twitter activity, user vocabulary and time period usage analysis.
+
+{% include figure image_path="/images/daily_tweets.jpg" alt="this is a placeholder image" caption="This is a figure caption." %}
 
 ## Data Collection and Preparation
 As already mentioned, our aim is to predict the political orientation of an Italian Twitter account chosen at random, using different machine learning models. For collecting the data, we used “Tweepy” – a Python library for accessing the Twitter API. This way, we were able to get 8000+ Italian Twitter Accounts, as well as their tweets.
