@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Danail Krzhalovski"
   avatar           : "/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Portfolio"
+  bio              : ""Data Science Student, Unversity of Padua""
   location         : "Skopje, Macedonia"
   email            :
   links:
