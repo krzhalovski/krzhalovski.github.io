@@ -18,7 +18,7 @@ One of the most prominently used techiques for improving state of the are Deep I
 
 The experiments will show that using different kinds of data augmentation improves the generalizing capabilities of the models on both a subset of the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset and of the full dataset. We will focus on obtaining good results where most of the classic models fail, namely on the differentiation of two specific classes of the dataset (shirt, tshirt/top).
 
-Furthermore, we propose a way of speeding up the fine-tuning of augmentation parameters by using transfer learning by training a model using the original data and incrementally adding different augmentations to obtain the most robust model that generalizes the best. The paper and supplement code is available at [link]
+Furthermore, we propose a way of speeding up the fine-tuning of augmentation parameters by using transfer learning by training a model using the original data and incrementally adding different augmentations to obtain the most robust model that generalizes the best. The paper and supplement code is available at [link](https://github.com/krzhalovski/Data-Augmentation-Automation)
 
 ## Dataset
 
