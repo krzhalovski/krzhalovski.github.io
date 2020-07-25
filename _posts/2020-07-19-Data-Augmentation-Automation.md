@@ -65,12 +65,24 @@ Also, a stable learning rate scheduler was used to decrease the learning rate by
 ### ZCA Whitening
 Whitening is a linear transformation that transforms a vector of random variables with a known covariance matrix into a set of new variables whose covariance matrix is the identity matrix, meaning that they are uncorrelated and have variance 1. We are training on images, so the raw input is redundant, since intuitively, adjacent pixel values are highly correlated. What we want to solve with whitening is to ensure our network sees feature that are less correlated with each other and they all have the same variance.
 
-More formally, a general whitening transforms a random vector $x$ into a random vector $z$ using a whitening matrix $$W$$ while the original covariance matrix $$cov(x)=\Sigma$$ becomes the identity matrix $$cov(z)=I$$. ZCA whitening is based on the eigen-vectors $U$ and eigen-values $$\Lambda$$ of the covariance matrix which can be decomposed as: $$\Sigma = U\Lambda U^T$$. Now, the whitening matrix can be written as: 
+More formally, a general whitening transforms a random vector $$x$$ into a random vector $$z$$ using a whitening matrix $$W$$ while the original covariance matrix $$cov(x)=\Sigma$$ becomes the identity matrix $$cov(z)=I$$. ZCA whitening is based on the eigen-vectors $$U$$ and eigen-values $$\Lambda$$ of the covariance matrix which can be decomposed as: $$\Sigma = U\Lambda U^T$$. Now, the whitening matrix can be written as: 
 
 $$W^{ZCA}=U\Lambda^{-\frac{1}{2}}U^T$$
 
-A parameterized formula has been used in [Pal et al.](https://ieeexplore.ieee.org/document/7808140) where $$\epsilon$$ is the whitening coefficient and S is the singular values of the initial set of images: $$W^{ZCA}=Udiag\left(\frac{1}{\sqrt{diag(S)+\epsilon}}\right)U^T$$
+A parameterized formula has been used in [Pal et al.](https://ieeexplore.ieee.org/document/7808140) where $$\epsilon$$ is the whitening coefficient and $$S$$ is the singular values of the initial set of images: $$W^{ZCA}=Udiag\left(\frac{1}{\sqrt{diag(S)+\epsilon}}\right)U^T$$
+
+<figure>
+  <img src="/images/Data_Augmentation/zca_whitening.png">
+</figure>
 
 ### Positional Augmentation
 
 Positional augmentation is the most common technique for adding variation to image datasets and it is also the simplest and most intuitive ones. This method doesn't change the values of single pixels but rather applies a "shift" of the whole image relative to some base axis. The transformations that can be applied can be divided into three main subgroups:
+
+1. Axis Shifting: width, height and depth shifting (zoom)
+2. Rotational Shifting: Rotation and Shear 
+3. Flips: Horizontal and Vertical
+
+<figure>
+  <img src="/images/Data_Augmentation/positional_augmentation.png">
+</figure>
