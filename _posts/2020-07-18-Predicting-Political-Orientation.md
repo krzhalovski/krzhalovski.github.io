@@ -33,14 +33,14 @@ The plot clearly shows an almost exponential growth of number of tweets starting
 
 In the following plot, we explore the length of the time periods in which the users were active on the site. More concretely, we compute the time difference between the first and last post of each user to determine what is the average time that a user is active on the site.
 
-<figure>
+<figure class="centerImage">
     <a href="/images/Twitter_Politics/activity.jpg"><img src="/images/Twitter_Politics/activity.jpg"></a>
 </figure>
 
 We can see that most of the users tend to use the platform for less than a 100 days while those that stay for a longer period are distributed uniformly. Another result we obtain before delving deeper into the data analysis and modeling is the fact that @matteosalvinimi is the 30th most used "word" in our dataset. Given the fact that we have a task to determine political affiliation from these tweets this is a motivating observation. A more detailed approach for how to obtain these results is available in the notebook.
 
 ## Data Collection and Preparation
-As already mentioned, our aim is to predict the political orientation of an Italian Twitter account chosen at random, using different machine learning models. For collecting the data, we used “Tweepy” – a Python library for accessing the Twitter API. This way, we were able to get 8000+ Italian Twitter Accounts, as well as their tweets.
+As already mentioned, our aim is to predict the political orientation of an Italian Twitter account chosen at random, using different machine learning models. For collecting the data, we used [Tweepy]("https://www.tweepy.org/") – a Python library for accessing the Twitter API. This way, we were able to get information about 8000+ Italian Twitter Accounts, as well as their tweets.
 
 ## Model Building
 Once the data was nicely formatted, some models were built according to it. Data from users labeled by the majority as Lega, PD, FDI and FI is used to train models that predict the political orientation behind a tweet. The M5Star users were splitted into another file and not used to train the models. After building the models, at the end M5S supporters were classified by it to see whether they fell into one of the two categories.
