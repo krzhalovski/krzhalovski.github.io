@@ -14,15 +14,15 @@ toc_sticky: true
 
 During the last few years, Deep Learning models have made incredible progress in classification problems thanks to the advances in deep network architectures, computational power and access to huge amounts of big data where they excel.
 
-One of the most prominently used techiques for improving state of the are Deep Image Classifiers is Data augmentation. In this paper, we will test different ways of applying this technique and compare the results obtained to provide empirical evidence that these methods indeed improve the classification power of Deep Learning models.
+One of the most prominently used techiques for improving state of the are Deep Image Classifiers is Data augmentation. In this post, we test different ways of applying this technique and compare the results obtained to provide empirical evidence that these methods indeed improve the classification power of Deep Learning models.
 
-Our experiments will show that using different kinds of data augmentation improves the generalizing capabilities of the models on both a subset of the Fashion MNIST dataset\cite{xiao2017} and of the full dataset. We will focus on obtaining good results where most of the classic models fail, namely on the differentiation of two specific classes of the MNIST dataset (shirt, tshirt/top).
+The experiments will show that using different kinds of data augmentation improves the generalizing capabilities of the models on both a subset of the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset and of the full dataset. We will focus on obtaining good results where most of the classic models fail, namely on the differentiation of two specific classes of the dataset (shirt, tshirt/top).
 
 Furthermore, we propose a way of speeding up the fine-tuning of augmentation parameters by using transfer learning by training a model using the original data and incrementally adding different augmentations to obtain the most robust model that generalizes the best. The paper and supplement code is available at [link]
 
 ## Dataset
 
-In this paper we will be using data augmentation techniques to show that they indeed improve the accuracy of a CNN model on the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. Fashion-MNIST is a dataset of article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. The dataset has no null values and is ready-usable. Each pixel has a value from 0 to 255 representing the color of the pixel. The only preprocessing that was needed was standardizing the values which we do with min-max feature scaling
+In this paper we will be using data augmentation techniques to show that they indeed improve the accuracy of a CNN model on the Fashion-MNIST dataset. Fashion-MNIST is a dataset of article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. The dataset has no null values and is ready-usable. Each pixel has a value from 0 to 255 representing the color of the pixel. The only preprocessing that was needed was standardizing the values which we do with min-max feature scaling
 
 $$\frac{X-X_{min}}{X_{max}-X_{min}}$$
 
@@ -86,3 +86,82 @@ Positional augmentation is the most common technique for adding variation to ima
 <figure>
   <img src="/images/Data_Augmentation/positional_augmentation.png">
 </figure>
+
+### Data Augmentation Automation (DAA)
+During the past few year significant improvements have been made in the process of automatic hyper-parameter finding. For finding the best combination of label-invariant augmentation hyper-parameters we propose a procedure comprising of 2 steps.
+
+1. As a first step we train our network without any data augmentation i.e. just the raw training data. This gives a starting point for tuning the hyper-parameters.
+2. Next, we develop a sequence of combinations of hyper-parameters to choose from and augment the training data. During this step one of two scenarios may occur. In the first case, the model performs worse and we obtain worse results than the base model in which case we fallback to the previous model weights and try another option of parameters (This is the option we want to avoid). In the second case, our model performs better and we keep the new model weights. Additionally, to prevent overfitting, we reduce the number of training steps by a constant factor for the next iteration and continue until there are no combinations left. The demo code is available [here](https://github.com/krzhalovski/Data-Augmentation-Automation).
+
+## Experiments
+
+Like we discussed in the introduction and , we carried out two types of experiments: firstly testing the augmentation techniques on the hard subset of shirts and t-shirts and secondly applying the best options that we obtained during the first trials on the full Fashion-MNIST dataset to determine whether the overall generalizing capabilities of the networks improved.
+
+<table style="width:100%">
+  <tr>
+    <th>Width Shift</th>
+    <th>Height Shift</th>
+    <th>Zoom</th>
+    <th>Rotation</th>
+    <th>ZCA</th>
+    <th>Accuracy</th> 
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>0.913</td>
+  </tr>
+  <tr>
+    <td>0.1</td>
+    <td>0.1</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>0.919</td>
+  </tr>
+  <tr>
+    <td>0.12</td>
+    <td></td>
+    <td></td>
+    <td>5</td>
+    <td></td>
+    <td>0.928</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>0.12</td>
+    <td></td>
+    <td>10</td>
+    <td>0.01</td>
+    <td>0.913</td>
+  </tr>
+  <tr>
+    <td>0.1</td>
+    <td>0.1</td>
+    <td>0.2</td>
+    <td></td>
+    <td></td>
+    <td>0.920</td>
+  </tr>
+  <tr>
+    <td>0.12</td>
+    <td>0.12</td>
+    <td>0.1</td>
+    <td></td>
+    <td></td>
+    <td>0.925</td>
+  </tr>
+</table>
+
+From the results, we can see that some combinations of augmentation techniques perform fairly better relative to the no augmentation CNN result. Another thing that we noticed during the experimentation phase is the fact that a combination between positional augmentations and whitening in the same trial yielded worse results than when we applied them distinctly. Moreover, positional augmentations complement each other very well and combining them yields the best models.
+
+Using the methodology described in 3.4. we were able to pick a subset of combinations that worked best for the MNIST subset and tried to use them for training the network on the entire dataset. The subset of combinations obtained improved the generalization ability of the network proposed in 3.1. by ~1-2\% after averaging multiple trials. The best accuracy that was achieved was 95.04\% which is an improvement of the baseline model with no augmentation by about 1.56\% which is in line with the improvements obtained on the smaller subset.
+
+## Conclusion and Further Work
+
+What this paper shows is the clear improvements that data augmentation provides for simple CNNs. However, techniques proposed in this and previous papers are still in the early stages of development and as a whole, data augmentation is a field of study that has huge potential in improving the generalizing capabilities of many neural network architectures. Further work may include refining the methodology we defined in 3.4. and developing a more general framework that extends the findings to different variety of problems such as signal processing and sequence generation.
+
+
