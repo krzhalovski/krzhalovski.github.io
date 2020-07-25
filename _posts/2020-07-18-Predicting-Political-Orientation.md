@@ -4,6 +4,9 @@ date: 2020-07-18
 tags: ["NLP"]
 excerpt: "Natural Language Processing and Classification"
 mathjax: true
+toc: true
+toc_label: "Table of Contents"
+toc_icon: "cog"
 ---
 
 ## Introduction
