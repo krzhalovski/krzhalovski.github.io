@@ -20,7 +20,7 @@ title                    : "Danail Krzhalovski"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Danail Krzhalovski"
-description              : "Portfolio"
+description              : "Data Science Student, Unversity of Padua"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
