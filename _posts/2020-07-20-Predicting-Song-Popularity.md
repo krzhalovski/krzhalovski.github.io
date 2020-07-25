@@ -4,6 +4,9 @@ date: 2020-07-18
 tags: ["EDA"]
 excerpt: "Data Analysis"
 mathjax: true
+toc_label: "Table of Contents"
+toc_icon: "cog"
+toc_sticky: true
 ---
 
 Testing 
