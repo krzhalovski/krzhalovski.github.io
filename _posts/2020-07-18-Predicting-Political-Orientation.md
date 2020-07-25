@@ -33,7 +33,7 @@ The plot clearly shows an almost exponential growth of number of tweets starting
 
 In the following plot, we explore the length of the time periods in which the users were active on the site. More concretely, we compute the time difference between the first and last post of each user to determine what is the average time that a user is active on the site.
 
-<figure">
+<figure>
     <a href="/images/Twitter_Politics/activity.jpg"><img src="/images/Twitter_Politics/activity.jpg"></a>
 </figure>
 
