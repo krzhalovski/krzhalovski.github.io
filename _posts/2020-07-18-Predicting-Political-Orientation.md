@@ -22,13 +22,22 @@ The project consists of two main phases:
 2. In the second phase, we crawl all the tweets associated with those accounts. Data of classified Twitter accounts and tweet contents from different groups will be combined into one big dataset. Then we fix a threshold for political party labeling on each account then merge the newly downloaded data with the labeled account data from phase 1. The purpose of this phase is to train and test different classification models on the tweet contents to predict the political orientation “right vs left”. Lega, Fratelli d’Italia, and Forza Italia are considered as right wing while Partito Democratico is left wing. After training and testing the classification models, we will use them on the labeled data of Movimento 5 Stelle to see how they classify these accounts to “right” or “left”, since this party is controversial and difficult to classify left or right even for humans.
 
 ### Initial Statistics
-Before delving into the huge dataset that was generated from all of the groups, we decided to do some initial statistics analysis on the dataset that our group gathered. As shown in the code snippets bellow we gained insights on user twitter activity, user vocabulary and time period usage analysis.
+Before delving into the huge dataset that was generated from all of the groups, we decided to do some initial statistics analysis on the dataset that our group gathered. As shown in the plots bellow we gained insights on user twitter activity, user vocabulary and time period usage analysis.
 
 <figure class="half">
     <a href="/images/Twitter_Politics/daily_tweets.jpg"><img src="/images/Twitter_Politics/daily_tweets.jpg"></a>
     <a href="/images/Twitter_Politics/daily_tweets_range.jpg"><img src="/images/Twitter_Politics/daily_tweets_range.jpg"></a>
-    <figcaption>Number of tweets per day</figcaption>
 </figure>
+
+The plot clearly shows an almost exponential growth of number of tweets starting somewhere in the middle of August. A hypothesis can be formed that states this increase might be caused by the political crisis occurring in Italy during this period, given that twitter is known for beeing a place to express political opinion with a safe, anonymous profile.
+
+In the following plot, we explore the length of the time periods in which the users were active on the site. More concretely, we compute the time difference between the first and last post of each user to determine what is the average time that a user is active on the site.
+
+<figure">
+    <a href="/images/Twitter_Politics/activity.jpg"><img src="/images/Twitter_Politics/activity.jpg"></a>
+</figure>
+
+We can see that most of the users tend to use the platform for less than a 100 days while those that stay for a longer period are distributed uniformly. Another result we obtain before delving deeper into the data analysis and modeling is the fact that @matteosalvinimi is the 30th most used "word" in our dataset. Given the fact that we have a task to determine political affiliation from these tweets this is a motivating observation. A more detailed approach for how to obtain these results is available in the notebook.
 
 ## Data Collection and Preparation
 As already mentioned, our aim is to predict the political orientation of an Italian Twitter account chosen at random, using different machine learning models. For collecting the data, we used “Tweepy” – a Python library for accessing the Twitter API. This way, we were able to get 8000+ Italian Twitter Accounts, as well as their tweets.
