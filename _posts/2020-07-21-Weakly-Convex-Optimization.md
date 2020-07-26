@@ -1,7 +1,7 @@
 ---
-title: "Predicting Song Popularity"
-date: 2020-07-18
-tags: ["EDA"]
+title: "Weakly Convex Optimization"
+date: 2020-07-21
+tags: ["Optimization"]
 excerpt: "Data Analysis"
 mathjax: true
 toc_label: "Table of Contents"
