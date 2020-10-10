@@ -9,18 +9,13 @@ toc_icon: "cog"
 toc_sticky: true
 ---
 
-Testing 
+## Introduction
+This post will explain in brief details the concept of weak convexity and the methods used to 
 
-Cool equation:
+## Weak Convexity
 
-$$ \mathbb{E}\[aX\] = a*\mathbb{E}\[X\] $$
+## S
 
-```python
-    import numpy as np
+## B
 
-    np.sum(np.array([3, 3, 3]))
-
-    def testing():
-        return "ok"
-```
-
+## Conclusion
