@@ -11,7 +11,7 @@ toc_sticky: true
 ---
 
 ## Introduction
-This summary report aims to find a connection between user's twitter activity and their political affiliation. For the full report and code, please visit this [link](https://github.com/krzhalovski/CBSD).
+This summary report aims to find a connection between user's twitter activity and their political affiliation. For the full report and code, please visit this [link](https://github.com/krzhalovski/Twitter_Politics/blob/main/CBSD_FINALREPORT.ipynb).
 
 ### Abstract
 In recent years, analyzing data acquired from social networks platform to predict and understand more about human cognition, behaviors and orientation has been a rising trend. Social media has changed not only the way we passively receive information but also how we express our personal opinions about everyday issues. That is the reason why Facebook, Twitter, Youtube and other social networks have become valuable sources of data that can be beneficial for many areas. Automatic political orientation prediction from social media posts has been proven successful in distinguishing between liberals and conservatives in the US. In this project, we will try to do political orientation prediction on Italian language and Italian political landscape.
@@ -52,16 +52,5 @@ We begin with a model among the multitude to see which one is the most convenien
 After selecting the pipeline components of our model, we focused on improving their performance. This was done by removing stopwords and searching for the hyperparameters that yield best results.
 
 ## Conclusion
-The results were generated, as precedently stated, splitting the labelled users into a training set of 80% and a testing set of 20%. Between all models, the most successful one was the Random Forest Classifier, providing an accuracy of 91.16% with some fine tuning (removing stopwords, grid search on hyperparameters). The other good one has been the XGBoost, with an accuracy of ___. These are the overall results:
-
-Testing 
-
-```python
-    import numpy as np
-
-    np.sum(np.array([3, 3, 3]))
-
-    def testing():
-        return "ok"
-```
+The results were generated, as precedently stated, splitting the labelled users into a training set of 80% and a testing set of 20%. Between all models, the most successful one was the Random Forest Classifier, providing an accuracy of 91.16% with some fine tuning (removing stopwords, grid search on hyperparameters). The other good one has been the XGBoost, with an accuracy of 88.13%. 
 
