@@ -24,15 +24,23 @@ The Moreau Envelope is the surrogate measure that will enable us to exactly that
 ## Proximal Operators and Algorithms
 An important concept that is needed to understand the algorithms discussed in the paper is the proximal operator.
 
-The figure illustrates how the proximal operator works: the thick black line indicates the boundary of the domain of the convex function f. Applying the operator to the blue points moves them to the corresponding red points. The three points in the domain of the function stay in the domain and move towards the minimum of the function, while the other two move to the boundary of the domain and towards the minimum of the function. The parameter λ controls the extent to which the proximal operator maps points towards the minimum of f.
+The figure illustrates how the proximal operator works: the thick black line indicates the boundary of the domain of the convex function $f$. Applying the operator to the blue points moves them to the corresponding red points. The three points in the domain of the function stay in the domain and move towards the minimum of the function, while the other two move to the boundary of the domain and towards the minimum of the function. The parameter $\lambda$ controls the extent to which the proximal operator maps points towards the minimum of $f$.
 
 <figure class="centerImage">
     <a href="/images/Weak_Convexity/Proximal.PNG"><img src="/images/Weak_Convexity/Proximal.PNG"></a>
 </figure>
 
-## Convergence Rates
+A proximal algorithm solves convex optimization problems using the proximal operators of the objective terms. For example, the proximal minimization algorithm, minimizes a convex function $f$ by repeatedly applying $prox_f$
+to some initial point.
 
-## Stochastic Optimization
+## Incremental Algorithms and Convergence Rates
+Incremental algorithms are suited for solving the finite sum optimization problem:
+
+$$\min_{x \in \mathbb{R}^n}f(x)=\sum_{i=1}^m f_i(x)$$
+
+So the question is what are incremental algorithms? In short, if you know stochastic algorithms, then you will also know how incremental algorithms work. The only difference between the two, is how they sample the given data: stochastic algorithms randomly choose a function from the set, whereas the incremental algorithms choose them in an iterative fashion, starting from the first component function and ending with the last one in each epoch.
+
+Although not intuitive at first glance why would these different sampling techniques make a difference, careful examination shows us that stochastic algorithms might suffer from selection bias, or simply oversampling and undersampling some composite functions with respect to the rest. Ultimatelly, they fulfill the same goal but incremental algorithms tend to converge faster because of this advantage.
 
 ## EMA methods
 
