@@ -24,7 +24,7 @@ The Moreau Envelope is the surrogate measure that will enable us to exactly that
 ## Proximal Operators and Algorithms
 An important concept that is needed to understand the algorithms discussed in the paper is the proximal operator.
 
-The figure illustrates how the proximal operator works: the thick black line indicates the boundary of the domain of the convex function $f$. Applying the operator to the blue points moves them to the corresponding red points. The three points in the domain of the function stay in the domain and move towards the minimum of the function, while the other two move to the boundary of the domain and towards the minimum of the function. The parameter $\lambda$ controls the extent to which the proximal operator maps points towards the minimum of $$f$$.
+The figure illustrates how the proximal operator works: the thick black line indicates the boundary of the domain of the convex function $$f$$. Applying the operator to the blue points moves them to the corresponding red points. The three points in the domain of the function stay in the domain and move towards the minimum of the function, while the other two move to the boundary of the domain and towards the minimum of the function. The parameter $$\lambda$$ controls the extent to which the proximal operator maps points towards the minimum of $$f$$.
 
 <figure class="centerImage">
     <a href="/images/Weak_Convexity/Proximal.PNG"><img src="/images/Weak_Convexity/Proximal.PNG"></a>
